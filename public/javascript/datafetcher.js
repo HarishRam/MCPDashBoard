@@ -5,7 +5,7 @@ var request = require('request-promise'),
 function jiradata(req_url) 
 {
 
-var cert = fs.readFileSync("/Users/ramakh01/Downloads/MCP/Harish.pem");
+var cert = fs.readFileSync("");// add your .pem file URL
     return request({
         url: req_url,
         method: "GET",
@@ -15,7 +15,7 @@ var cert = fs.readFileSync("/Users/ramakh01/Downloads/MCP/Harish.pem");
         strictSSL : true,
         cert : cert,
         key : cert,
-        passphrase : 'harish',
+        passphrase : '',// add your .epm file password
         securityOptions : 'SSL_OP_NO_SSLv3'
     }).then(function (body){
             if(body)
