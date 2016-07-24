@@ -1,0 +1,6 @@
+{
+    "Project": "MCP",
+    "JQLQuery": "jql=project in ('Mobile Compatibility Programme') AND issuetype in (Task) ORDER BY created DESC &maxResults=500",
+    "ColHeader": ["Jira Ticket","Device Name","Models","Asset Tracking","TestRail","iPlayer Status", "iPlayerRadio Status", "News Status", "Sports Status", "Weather Status", "Kids Status", "Cebeebies Status", "Travel Status", "Music Status", "Bitesize Status","Platforms"],
+    "SubTasks": ["iPlayer", "iPlayerRadio", "News", "Sports", "Weather", "Kids", "Cebeebies", "Travel", "Music", "Bitesize"]
+}

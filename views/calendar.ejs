@@ -1,0 +1,147 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Planning View - TV Certification</title>
+		<!--<script src="js/jquery.min.js"></script>-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+		<script src="js/fullcalendar.min.js"></script>
+		<link href="css/fullcalendar.css" rel='stylesheet' type='text/css' />
+		<script src="node_modules/bootstrap/js/modal.js"></script>
+
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.3/jquery-ui.css' rel='stylesheet' />
+
+		<script>
+		$(document).ready(function() {
+
+            $("#toggle").click(function(){
+                $("#header").toggle( "slide", { direction: "up"  }, 500 );
+                if($("#nav").hasClass("fa fa-chevron-down")){
+                    $("#nav").removeClass("fa fa-chevron-down");
+                    $("#nav").addClass("fa fa-chevron-up");
+                }else{
+                    $("#nav").removeClass("fa fa-chevron-up");
+                    $("#nav").addClass("fa fa-chevron-down");
+                }
+
+
+            });
+         });
+		</script>
+
+
+		<!-- Bootstrap Core CSS -->
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+            <!-- MetisMenu CSS -->
+            <link href="css/metisMenu.min.css" rel="stylesheet"/>
+
+            <!-- DataTables CSS -->
+            <link href="css/dataTables.bootstrap.css" rel="stylesheet"/>
+
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+
+            <!-- Custom CSS -->
+                <!--<link href="/dist/css/sb-admin-2.css" rel="stylesheet">-->
+
+                <!-- Morris Charts CSS -->
+                <!-- <link href="/bower_components/morrisjs/morris.css" rel="stylesheet"> -->
+
+                <!-- Custom Fonts -->
+                <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+    <div class="container">
+        <div class="navbar-header" style="display: none" id="header">
+            <form class="form-horizontal" enctype="multipart/form-data" role="form" method="post" action="/planner">
+                    <div class="input-group custom-search-form">
+                        <input type="file" class="form-control" name="upload">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit" id="submit" name="submit">
+                            <i class="fa fa-upload"></i>
+                        </button>
+                    </span>
+                    </div>
+             </form>
+        </div>
+    <button type="button" class="btn btn-default btn-xs" id="toggle">
+        <i class="fa fa-chevron-down" id="nav"></i>
+    </button>
+    </div>
+    <div id='calendar'></div>
+
+
+    <style type="text/css">
+        body {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 13px;
+            font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+        }
+
+        #calendar {
+            width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+
+
+
+
+    <div class="modal" id="myModalNorm" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close"
+                       data-dismiss="modal">
+                           <span aria-hidden="true">&times;</span>
+                           <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+
+                    </h4>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <form role="form">
+                      <div class="form-group">
+                        <label for="eventtitle">Event title</label>
+                          <input type="text" class="form-control" id="eventtitle"/>
+                      </div>
+                      <div class="form-group">
+                        <label for="startDate">Start Date:</label>
+                          <input type="text" class="form-control" id="startDate" placeholder="Password"/>
+                        <label for="endDate">End Date:</label>
+                          <input type="text" class="form-control" id="endDate" placeholder="Password"/>
+                      </div>
+                    </form>
+
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true" id='close'>
+                                Close
+                    </button>
+                    <button type="button" class="btn btn-primary" id="submitButton">
+                        Save changes
+                    </button>
+                    <button type="button" class="btn btn-primary" id="delete">
+                        Delete
+                    </button>
+                </div>
+             </div>
+          </div>
+    </div>
+
+	</body>
+	<!-- Custom Calendar jQuery methods -->
+                <script src="/js/calendar_custom.js" type="text/javascript"></script>
+</html>

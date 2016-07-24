@@ -1,0 +1,67 @@
+<html>
+<head>
+<title><%= title%></title>
+    <meta http-equiv="x-ua-compatible" content="IE=10">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/pick-a-color-1.2.3.min.css">
+    <script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href='/css/bootstrap.css' />
+
+</head>
+<body>
+<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Configuration</h3>
+                    </div>
+                    <div class="panel-body">
+                    <form class="form-horizontal" enctype="application/json" role="form" method="post" action="/setting">
+                    <div class="form-group">
+                        <%
+                          Object.keys(manufacture).forEach(function(man){
+                          if(man!==''){
+                        %>
+
+                                    <label for="brand" class="col-sm-2 control-label"><%=man%></label>
+                                    <div class="col-md-4">
+                                        <input value="<%=manufacture[man]%>" class="pick-a-color form-control" name="<%=man%>" type="text" autofocus>
+                                    </div>
+
+                        <%
+                         }});
+                        %>
+                        </div>
+                        <p align="center"><button class="btn btn-primary" type="submit" id="submit" name="submit">
+                        Submitted
+                        </button></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="public/js/tinycolor-0.9.14.min.js"></script>
+<script src="public/js/pick-a-color-1.2.3.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $(".pick-a-color").pickAColor({
+            showSpectrum          : true,
+            showSavedColors       : true,
+            saveColorsPerElement  : false,
+            fadeMenuToggle        : true,
+            showAdvanced          : true,
+            showBasicColors       : true,
+            showHexInput          : true
+//            allowBlank            : true
+        });
+    });
+
+</script>
+</html>
