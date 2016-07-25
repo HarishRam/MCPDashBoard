@@ -69,14 +69,16 @@ var addDataToTable = (function() {
 
     }
 
-    function appendSubtasks(tasks){
+   function appendSubtasks(tasks)
+    {
         var colTasks = "";
 
         for(var i=0;i<tasks.length;i++){
-            var status = tasks[i].match(/pass|fail/i);
+            var status = tasks[i].match(/pass|fail|partial|conditional/i);
             if (status != null){
                 var currentStatus = status.pop();
-                colTasks +="<td class='"+currentStatus.toLowerCase()+"'>"+currentStatus+"</td>";
+             //   colTasks +="<td class='"+currentStatus.toLowerCase()+"'>"+currentStatus+"</td>";
+             colTasks +="<td class='"+currentStatus.toLowerCase()+"'>"+tasks[i]+"</td>";
             }else{
                 colTasks +="<td>"+tasks[i]+"</td>";
             }
