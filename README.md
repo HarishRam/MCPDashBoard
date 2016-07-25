@@ -45,7 +45,7 @@ $ npm start
 ```
 This is will generate error logs (i.e err.log) and output logs (i.e out.log)
 
-Now you can access TV-Certification-Dashboard application through [http://localhost:1344/jira](http://localhost:1344/jira)
+Now you can access MCP Dashboard application through [http://localhost:1344/jira](http://localhost:1344/jira)
 
 
 ## To stop the server
